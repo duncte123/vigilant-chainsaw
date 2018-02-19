@@ -1,6 +1,12 @@
+let token = "";
+
 function submitForm() {
     //clear the messages paragraph
     _("messages").innerHTML = "Sending.....";
+
+    if(token == "") {
+        _("messages").innerHTML = "Please complete the captcha.";
+    }
 
     //Get all the things
     let fname = _("fname").value,
@@ -28,6 +34,7 @@ function submitForm() {
     data.append("lname", lname);
     data.append("email", email);
     data.append("message", message);
+    data.append("g-recaptcha-response", token);
 
     // noinspection EqualityComparisonWithCoercionJS
     if(website != "") {
@@ -54,6 +61,10 @@ function submitForm() {
     };
 
     ajax.send(data);
+}
+
+function getToken(t) {
+    token = t;
 }
 
 function _(el) { return document.getElementById(el); }

@@ -48,11 +48,13 @@
                               required></textarea>
                 </div>
                 <small class="center">All fields with "*" are required</small> <br />
+                <div class="g-recaptcha left" data-callback="getToken" data-sitekey="6LcbTUcUAAAAAFsgz7RInMR5NjaAgkxrJYSl9hEk"></div>
                 <input type="submit" class="right btn btn-large red" value="submit" />
                 <div style="clear: both;"></div>
             </div>
         </form>
 <!--        I'm gonna be lazy this time, It's all about the php-->
+        <script src='https://www.google.com/recaptcha/api.js'></script>
         <script src="https://code.jquery.com/jquery-3.3.1.min.js"
                 integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>

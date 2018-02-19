@@ -1,6 +1,26 @@
 <?php
-if( isset($_POST["fname"], $_POST["lname"], $_POST["email"], $_POST["message"]) &&
-    !isEmpty($_POST["fname"], $_POST["lname"], $_POST["email"], $_POST["message"])) {
+if( isset($_POST["fname"], $_POST["lname"], $_POST["email"], $_POST["message"], $_POST["g-recaptcha-response"]) &&
+    !isEmpty($_POST["fname"], $_POST["lname"], $_POST["email"], $_POST["message"], $_POST["g-recaptcha-response"])) {
+
+    $curl = curl_init();
+    curl_setopt_array($curl, [
+        CURLOPT_RETURNTRANSFER => 1,
+        CURLOPT_URL => 'https://www.google.com/recaptcha/api/siteverify',
+        CURLOPT_POST => 1,
+        CURLOPT_POSTFIELDS => [
+            //the github repo is private for this reason, there is a secret here
+            'secret' => "6LcbTUcUAAAAANfjGsZT42G32V73HpgIDf3X4bGc",
+            'response' => $_POST["g-recaptcha-response"],
+            "remoteip" => getRealIpAddr()
+        ],
+    ]);
+
+    $chapRes = json_decode(curl_exec($curl));
+    curl_close($curl);
+
+    if($chapRes->success != true){
+        die("Captcha check failed, please try again later");
+    }
 
     if (!filter_var($_POST["email"], FILTER_VALIDATE_EMAIL)) {
         die("That is not a valid email address.");
