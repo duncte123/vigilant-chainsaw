@@ -48,7 +48,9 @@
                               required></textarea>
                 </div>
                 <small class="center">All fields with "*" are required</small> <br />
-                <div class="g-recaptcha left" data-callback="getToken" data-sitekey="6LcbTUcUAAAAAFsgz7RInMR5NjaAgkxrJYSl9hEk"></div>
+                <!-- The captcha key will produce a warning
+                Read this article for more info https://developers.google.com/recaptcha/docs/faq#id-like-to-run-automated-tests-with-recaptcha-v2-what-should-i-do -->
+                <div class="g-recaptcha left" data-callback="getToken" data-sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"></div>
                 <input type="submit" class="right btn btn-large red" value="submit" />
                 <div style="clear: both;"></div>
             </div>

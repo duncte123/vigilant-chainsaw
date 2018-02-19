@@ -8,8 +8,9 @@ if( isset($_POST["fname"], $_POST["lname"], $_POST["email"], $_POST["message"], 
         CURLOPT_URL => 'https://www.google.com/recaptcha/api/siteverify',
         CURLOPT_POST => 1,
         CURLOPT_POSTFIELDS => [
-            //the github repo is private for this reason, there is a secret here
-            'secret' => "6LcbTUcUAAAAANfjGsZT42G32V73HpgIDf3X4bGc",
+            //This key is public to run tests on
+            // https://developers.google.com/recaptcha/docs/faq#id-like-to-run-automated-tests-with-recaptcha-v2-what-should-i-do
+            'secret' => "6LeIxAcTAAAAAGG-vFI1TnRWxMZNFuojJ4WifJWe",
             'response' => $_POST["g-recaptcha-response"],
             "remoteip" => getRealIpAddr()
         ],

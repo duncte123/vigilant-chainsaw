@@ -6,6 +6,7 @@ function submitForm() {
 
     if(token == "") {
         _("messages").innerHTML = "Please complete the captcha.";
+        return;
     }
 
     //Get all the things
