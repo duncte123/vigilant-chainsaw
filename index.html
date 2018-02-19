@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport"
+              content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>A GuestBook</title>
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css" />
+        <style>
+            .container {
+                border: 1px black solid;
+                margin-top: 100px;
+                box-shadow: rgba(97, 2, 0, 0.29) 0 0 100px 0;
+                padding: 20px;
+            }
+            .star {
+                color: red;
+            }
+        </style>
+    </head>
+    <body>
+
+        <form id="form" action="/" method="get" onsubmit="submitForm(); return false;" autocomplete="off">
+            <div class="container" id="cont">
+                <h1 class="center">Guest Book</h1>
+                <p class="center" id="messages"></p>
+                <div class="input-field">
+                    <label for="fname">First Name: *</label>
+                    <input type="text" id="fname" name="fname" required />
+                </div>
+                <div class="input-field">
+                    <label for="lname">Last Name: *</label>
+                    <input type="text" id="lname" name="lname" required />
+                </div>
+                <div class="input-field">
+                    <label for="email">Email: *</label>
+                    <input type="email" id="email" name="email" required />
+                </div>
+                <div class="input-field">
+                    <label for="website">Website: </label>
+                    <input type="text" name="website" id="website" />
+                </div>
+                <div class="input-field">
+                    <label for="message">Message: *</label>
+                    <textarea name="message" id="message" class="materialize-textarea" cols="30" rows="10"
+                              required></textarea>
+                </div>
+                <small class="center">All fields with "*" are required</small> <br />
+                <input type="submit" class="right btn btn-large red" value="submit" />
+                <div style="clear: both;"></div>
+            </div>
+        </form>
+<!--        I'm gonna be lazy this time, It's all about the php-->
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+                integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+        <script src="js/main.js"></script>
+    </body>
+</html>
