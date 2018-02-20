@@ -35,11 +35,11 @@ if( isset($_POST["fname"], $_POST["lname"], $_POST["email"], $_POST["message"], 
         "ip" => getRealIpAddr()
     ];
 
-    $sql = "INSERT INTO guestbook VALUES(default, :fname , :lname, :email, NULL , :message, :ip )";
+    $sql = "INSERT INTO guestbook VALUES(default, :fname , :lname, :email, NULL , :message, :ip , default)";
 
     if(isset($_POST["website"]) && !empty($_POST["website"])) {
         $sqlFields += [ "website" => $_POST["website"] ];
-        $sql = "INSERT INTO guestbook VALUES(default, :fname , :lname , :email , :website , :message, :ip )";
+        $sql = "INSERT INTO guestbook VALUES(default, :fname , :lname , :email , :website , :message, :ip , default)";
     }
 
     try {

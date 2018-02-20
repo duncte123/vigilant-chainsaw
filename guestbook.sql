@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 19, 2018 at 06:32 PM
+-- Generation Time: Feb 20, 2018 at 08:18 AM
 -- Server version: 10.1.25-MariaDB
 -- PHP Version: 7.1.7
 
@@ -35,18 +35,20 @@ CREATE TABLE `guestbook` (
   `email` varchar(100) NOT NULL,
   `website` text,
   `message` text NOT NULL,
-  `ip` text NOT NULL
+  `ip` text NOT NULL,
+  `date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `guestbook`
 --
 
-INSERT INTO `guestbook` (`id`, `first_name`, `last_name`, `email`, `website`, `message`, `ip`) VALUES
-(1, 'Duncan', 'Sterken', 'duncan@leeks.life', NULL, 'hello', ''),
-(2, 'Duncan', 'Sterken', 'duncan@leeks.life', NULL, 'hello', '127.0.0.1'),
-(3, 'Duncan', 'Sterken', 'duncan@leeks.life', 'https://duncte123.me/', 'Hellotherewhatanicewebsite', '127.0.0.1'),
-(4, 'Duncan', 'Sterken', 'duncan@leeks.life', 'https://duncte123.me/', 'Hello there', '127.0.0.1');
+INSERT INTO `guestbook` (`id`, `first_name`, `last_name`, `email`, `website`, `message`, `ip`, `date`) VALUES
+(1, 'Duncan', 'Sterken', 'duncan@leeks.life', NULL, 'hello', '', '2018-02-20 08:16:12'),
+(2, 'Duncan', 'Sterken', 'duncan@leeks.life', NULL, 'hello', '127.0.0.1', '2018-02-20 08:16:12'),
+(3, 'Duncan', 'Sterken', 'duncan@leeks.life', 'https://duncte123.me/', 'Hellotherewhatanicewebsite', '127.0.0.1', '2018-02-20 08:16:12'),
+(4, 'Duncan', 'Sterken', 'duncan@leeks.life', 'https://duncte123.me/', 'Hello there', '127.0.0.1', '2018-02-20 08:16:12'),
+(6, 'Duncan', 'Sterken', 'duncan@leeks.life', NULL, 'jhkllkjhgdf dshdfs dflghklfdohg', '127.0.0.1', '2018-02-20 08:16:12');
 
 --
 -- Indexes for dumped tables
@@ -66,7 +68,7 @@ ALTER TABLE `guestbook`
 -- AUTO_INCREMENT for table `guestbook`
 --
 ALTER TABLE `guestbook`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;COMMIT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
