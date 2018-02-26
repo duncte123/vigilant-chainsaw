@@ -64,7 +64,7 @@ if( isset($_POST["fname"], $_POST["lname"], $_POST["email"], $_POST["message"], 
 
 /**
  * @param array ...$items the items to check
- * @return bool true if all the items are empty
+ * @return bool true if one the items is empty
  */
 function isEmpty(...$items) {
 
