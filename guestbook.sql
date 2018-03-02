@@ -43,13 +43,6 @@ CREATE TABLE `guestbook` (
 -- Dumping data for table `guestbook`
 --
 
-INSERT INTO `guestbook` (`id`, `first_name`, `last_name`, `email`, `website`, `message`, `ip`, `date`) VALUES
-(1, 'Duncan', 'Sterken', 'duncan@leeks.life', NULL, 'hello', '', '2018-02-20 08:16:12'),
-(2, 'Duncan', 'Sterken', 'duncan@leeks.life', NULL, 'hello', '127.0.0.1', '2018-02-20 08:16:12'),
-(30, 'Duncan', 'Sterken', 'duncan@leeks.life', 'https://duncte123.me/', 'Hellotherewhatanicewebsite', '127.0.0.1', '2018-02-20 08:16:12'),
-(67, 'Duncan', 'Sterken', 'duncan@leeks.life', 'https://duncte123.me/', 'Hello there', '127.0.0.1', '2018-02-20 08:16:12'),
-(870, 'Duncan', 'Sterken', 'duncan@leeks.life', NULL, 'jhkllkjhgdf dshdfs dflghklfdohg', '127.0.0.1', '2018-02-20 08:16:12');
-
 --
 -- Indexes for dumped tables
 --
